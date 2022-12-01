@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.lairon</groupId>
+  <artifactId>LairConfig</artifactId>
+  <version>1.2.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20221201.144000</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20221201144000</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.2.1-20221201.144000-1</value>
+        <updated>20221201144000</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.2.1-20221201.144000-1</value>
+        <updated>20221201144000</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
