@@ -4,6 +4,7 @@ package com.lairon.lairconfig;
 import com.google.common.io.Files;
 import com.lairon.lairconfig.annotations.ConfigComment;
 import com.lairon.lairconfig.annotations.ConfigPath;
+import org.bspfsystems.yamlconfiguration.configuration.ConfigurationSection;
 import org.bspfsystems.yamlconfiguration.configuration.InvalidConfigurationException;
 import org.bspfsystems.yamlconfiguration.file.FileConfiguration;
 import org.bspfsystems.yamlconfiguration.file.YamlConfiguration;
@@ -69,10 +70,12 @@ public final class LairConfig {
                 field.set(registeredField.getStorageClass(), Enum.valueOf(enumData.getClass(), (String) data));
             } else if (registeredField.getValue() instanceof Map) {
                 Map<String, String> map = new HashMap<>();
-
-                for (String key : config.getConfigurationSection(path).getKeys(false)) {
-                    map.put(key, config.getString(path + "." + key));
-                }
+                ConfigurationSection configurationSection = config.getConfigurationSection(path);
+                if (configurationSection != null)
+                    for (String key : configurationSection.getKeys(false)) {
+                        map.put(key, config.getString(path + "." + key));
+                    }
+                field.set(registeredField.getStorageClass(), map);
             } else {
                 field.set(registeredField.getStorageClass(), data);
             }
