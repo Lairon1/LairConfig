@@ -78,6 +78,7 @@ public final class LairConfig {
                 }else{
                     setValueIntoConfig(registeredField);
                     save = true;
+                    field.set(registeredField.getStorageClass(), registeredField.getValue());
                 }
                 field.set(registeredField.getStorageClass(), map);
             } else {
