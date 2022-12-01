@@ -1,7 +1,5 @@
-Test:
-  SQL:
-    USERNAME: Lairon1
-  description: '[^a-zA-Z0-9а-яА-Я!"ё#$%&''()*+,.\/:;<=>?@\[\] ^_`{|}~-]+'
-  TestEnum:
-    # asdasdasdas
-    enum: TEST
+SQL:
+  USERNAME:
+    testss1: asd1
+    testssasd2: asasda2
+    testssasdasdas3: asdaasd3

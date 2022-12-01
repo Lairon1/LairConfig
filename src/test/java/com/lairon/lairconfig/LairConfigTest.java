@@ -12,8 +12,7 @@ public class LairConfigTest {
         LairConfig lairConfig = new LairConfig("C:\\Users\\Lairon\\IdeaProjects\\LairConfig\\src\\test\\resources\\test.yml");
         StorageTest storageClass = new StorageTest();
         lairConfig.registerStorageClass(storageClass);
-        lairConfig.reload();
-
+        lairConfig.reload();;
     }
 
 }

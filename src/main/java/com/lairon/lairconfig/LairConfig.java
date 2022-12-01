@@ -11,9 +11,7 @@ import org.bspfsystems.yamlconfiguration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public final class LairConfig {
 
@@ -69,6 +67,12 @@ public final class LairConfig {
             field.setAccessible(true);
             if (registeredField.getValue() instanceof Enum enumData) {
                 field.set(registeredField.getStorageClass(), Enum.valueOf(enumData.getClass(), (String) data));
+            } else if (registeredField.getValue() instanceof Map) {
+                Map<String, String> map = new HashMap<>();
+
+                for (String key : config.getConfigurationSection(path).getKeys(false)) {
+                    map.put(key, config.getString(path + "." + key));
+                }
             } else {
                 field.set(registeredField.getStorageClass(), data);
             }
