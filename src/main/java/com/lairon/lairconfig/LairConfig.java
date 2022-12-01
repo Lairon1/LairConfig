@@ -71,10 +71,14 @@ public final class LairConfig {
             } else if (registeredField.getValue() instanceof Map) {
                 Map<String, String> map = new HashMap<>();
                 ConfigurationSection configurationSection = config.getConfigurationSection(path);
-                if (configurationSection != null)
+                if (configurationSection != null){
                     for (String key : configurationSection.getKeys(false)) {
                         map.put(key, config.getString(path + "." + key));
                     }
+                }else{
+                    setValueIntoConfig(registeredField);
+                    save = true;
+                }
                 field.set(registeredField.getStorageClass(), map);
             } else {
                 field.set(registeredField.getStorageClass(), data);
