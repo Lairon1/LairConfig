@@ -129,5 +129,7 @@ public final class LairConfig {
         }
     }
 
-
+    public FileConfiguration getConfig() {
+        return config;
+    }
 }
