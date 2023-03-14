@@ -4,10 +4,11 @@ package com.lairon.lairconfig;
 import com.google.common.io.Files;
 import com.lairon.lairconfig.annotations.ConfigComment;
 import com.lairon.lairconfig.annotations.ConfigPath;
-import org.bspfsystems.yamlconfiguration.configuration.ConfigurationSection;
-import org.bspfsystems.yamlconfiguration.configuration.InvalidConfigurationException;
-import org.bspfsystems.yamlconfiguration.file.FileConfiguration;
-import org.bspfsystems.yamlconfiguration.file.YamlConfiguration;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -101,9 +102,9 @@ public final class LairConfig {
             config.set(path, field.getValue());
         }
 
-        if (field.getComments() != null) {
-            config.setComments(path, field.getComments());
-        }
+//        if (field.getComments() != null) {
+//            config.setComments(path, field.getComments());
+//        }
     }
 
     public void registerStorageClass(StorageClass storageClass) throws IllegalAccessException {

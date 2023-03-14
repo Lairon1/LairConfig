@@ -1,6 +1,6 @@
 package com.lairon.lairconfig;
 
-import org.bspfsystems.yamlconfiguration.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.junit.Test;
 
 import java.io.IOException;
